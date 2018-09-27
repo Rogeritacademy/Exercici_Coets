@@ -1,25 +1,16 @@
 /*jshint esversion: 6 */
 
 class Rocket {
-  constructor(serialNumber, propellers) {
-    this.serialNumber = serialNumber;
-    this.propellers = propellers;
+  constructor(rocketName, serialNum, propellersNum) {
+    this.rocketName = rocketName;
+    this.serialNum = serialNum;
+    this.propellersNum = propellersNum;
   }
 
   showData() {
-    //alert(this.serialNumber);
-    //alert(this.propellers);
-    //Rocket1_container.innerHTML = this.serialNumber;
-    document.querySelector("#Rocket-1").innerHTML = this.serialNumber;
+    var newDiv = document.createElement("div");
+    newDiv.id = this.rocketName;
+    newDiv.innerHTML = this.rocketName + '<br>' + this.serialNum + '<br>' + this.propellersNum;
+    document.getElementById('main').appendChild(newDiv);
   }
 }
-
-const Rocket1_container = document.querySelector("#Rocket-1");
-const Rocket2_container = document.querySelector("#Rocket-2");
-const originText = document.querySelector("#origin-text p").innerHTML;
-
-let rocket1 = new Rocket("32WESSDS", "3");
-let rocket2 = new Rocket("LDSFJA32", "6");
-
-rocket1.showData();
-rocket2.showData();
