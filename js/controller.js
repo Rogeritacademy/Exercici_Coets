@@ -83,12 +83,10 @@ function showData(rocket) {
 }
 
 function updateData(rocket) {
-  //var changePropellerValues = document.getElementById(rocket.rocketName);
-  var changePropellerValues = document.getElementsByClassName("ActualPropPow")[0];
-  var changeSpeedValues = document.getElementsByClassName("ActualSpeed")[0];
-
+  var changePropellerValues = document.getElementById(rocket.rocketName).getElementsByClassName("ActualPropPow")[0];
+  //var changeSpeedValues = document.getElementsByClassName("ActualSpeed")[0];
   changePropellerValues.innerHTML = rocket.rocketActualPower;
-  changeSpeedValues.innerHTML = rocket.rocketSpeed;
+  //changeSpeedValues.innerHTML = rocket.rocketSpeed;
 
 }
 
