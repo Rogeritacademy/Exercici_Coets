@@ -6,11 +6,4 @@ class Rocket {
     this.serialNum = serialNum;
     this.propellersNum = propellersNum;
   }
-
-  showData() {
-    var newDiv = document.createElement("div");
-    newDiv.id = this.rocketName;
-    newDiv.innerHTML = this.rocketName + '<br>' + this.serialNum + '<br>' + this.propellersNum;
-    document.getElementById('main').appendChild(newDiv);
-  }
 }

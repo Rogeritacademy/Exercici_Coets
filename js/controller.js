@@ -1,6 +1,5 @@
 /*jshint esversion: 6 */
 
-
 /*
 FASE 1:
 Volem fer un software de carreres de coets.
@@ -13,5 +12,12 @@ Mostrar a pantalla el codi dels coets i el número de propulsors que té.
 const rocket1 = new Rocket("Rocket1", "32WESSDS", "3");
 const rocket2 = new Rocket("Rocket2", "LDSFJA32", "6");
 
-rocket1.showData();
-rocket2.showData();
+function showData(rocket) {
+  var newDiv = document.createElement("div");
+  newDiv.id = rocket.rocketName;
+  newDiv.innerHTML = '<p>' + rocket.rocketName + '<br>' + rocket.serialNum + '<br>' + rocket.propellersNum + '</p>';
+  document.getElementById('main').appendChild(newDiv);
+}
+
+showData(rocket1);
+showData(rocket2);
