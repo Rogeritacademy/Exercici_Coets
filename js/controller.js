@@ -1,16 +1,23 @@
 /*jshint esversion: 6 */
 
 /*
-FASE 2:
-Volem millorar el software perquè el propulsor tingui una potència màxima.
-Modifiquem en el main anterior:
-Creem dos coets amb els codis “32WESSDS” I “LDSFJA32”. El primer coet tindrà tres propulsors (potència màxima: 10,30,80)
-i el segon sis propulsors (potència màxima: 30,40,50,50,30,10).
-Mostrar a pantalla el codi dels coets, el número de propulsors que té i la potència màxima de cada propulsor.
+FASE 3:
+Tots els propulsors tindran una potència actual que començarà amb 0.
 
-Output:
-32WESSDS: 10,30,80
-LDSFJA32: 30,40,50,50,30,10
+El coet tindrà dos mètodes, accelerar o frenar i  augmentarà o es reduirà de 10 en 10 la potencia del propulsor.
+El coet tindrà una velocitat actual que és la suma de totes les potències dels seus propulsors.
+
+Modifiquem en el main anterior:
+- Creem dos coets amb els codis “32WESSDS” I “LDSFJA32”. El primer coet tindrà tres propulsors (potència: 10,30,80)
+i el segon sis propulsors (potència: 30,40,50,50,30,10).
+- Mostrar a pantalla el codi dels coets, el número de propulsors que té i la potència màxima de cada propulsor.
+- Mostrar a pantalla la velocitat actual dels coets
+- Accelerar amb els coets tres cops
+- Mostrar a pantalla la velocitat actual
+- Frenar cinc cops amb el primer coet (“32WESSDS”) i accelerar set amb el segon coet.
+- Mostrar a pantalla la velocitat actual
+- Accelerar 15 cops amb els dos coets.
+- Mostrar a pantalla la velocitat actual
 */
 
 var rocket1Id = ["Rocket 1", "32WESSDS"];
