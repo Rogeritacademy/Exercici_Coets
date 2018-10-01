@@ -13,16 +13,24 @@ Output:
 LDSFJA32: 30,40,50,50,30,10
 */
 
-let rocket1MaxPower = [10,30,80];
-let rocket2MaxPower = [30,40,50,50,30,10];
+var rocket1Id = ["Rocket 1", "32WESSDS"];
+var rocket2Id = ["Rocket 2", "LDSFJA32"];
 
-const rocket1 = new Rocket("Rocket1", "32WESSDS", "3");
-const rocket2 = new Rocket("Rocket2", "LDSFJA32", "6");
+var rocket1MaxPower = [10,30,80];
+var rocket2MaxPower = [30,40,50,50,30,10];
+
+var rocket1PropellersNum = rocket1MaxPower.length;
+var rocket2PropellersNum = rocket2MaxPower.length;
+
+const rocket1 = new Rocket(...rocket1Id, rocket1PropellersNum, ...rocket1MaxPower);
+const rocket2 = new Rocket(...rocket2Id, rocket2PropellersNum, ...rocket2MaxPower);
+
+//console.log(rocket1);
 
 function showData(rocket) {
   var newDiv = document.createElement("div");
   newDiv.id = rocket.rocketName;
-  newDiv.innerHTML = '<p>' + rocket.rocketName + '<br>Serial: ' + rocket.serialNum + '<br>Propellers: ' + rocket.propellersNum + '</p>';
+  newDiv.innerHTML = '<p>' + rocket.rocketName + '<br>Serial: ' + rocket.serialNum + '<br>Propellers: ' + rocket.propellersNum + '<br>Each Propeller MaxPower: ' + rocket.rocketMaxPower + '</p>';
   document.getElementById('main').appendChild(newDiv);
 }
 
