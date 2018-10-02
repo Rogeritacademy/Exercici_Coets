@@ -75,8 +75,6 @@ function initAccel(rocket,powerUps) {
   var actualPower = rocket.rocketActualPower;
   var maxPower = rocket.rocketMaxPower;
   var actualSpeed = rocket.rocketSpeed;
-  console.log("rip: ", rocket.rocketInitialPower);
-
   accelerate(rocket,powerUps,actualPower,maxPower,actualSpeed);
 }
 
@@ -84,8 +82,6 @@ function initBrakes(rocket,powerDowns) {
   var actualPower = rocket.rocketActualPower;
   var maxPower = rocket.rocketMaxPower;
   var actualSpeed = rocket.rocketSpeed;
-  console.log("rip: ", rocket.rocketInitialPower);
-
   brakes(rocket,powerDowns,actualPower,maxPower,actualSpeed);
 }
 
@@ -102,17 +98,11 @@ var desiredSpeed = actualSpeed + (powerUps*10);
       }
     }
   }
-  console.log("rip: ", rocket.rocketInitialPower);
-
   rocket.rocketSpeed = actualSpeed;
 }
 
 function brakes(rocket,powerDowns,actualPower,maxPower,actualSpeed) {
 var desiredSpeed = actualSpeed - (powerDowns*10);
-console.log("desiredSpeed: ", desiredSpeed);
-console.log("actualSpeed: ", actualSpeed);
-console.log("rip: ", rocket.rocketInitialPower);
-
   for(var j = 0; j <= powerDowns; j++) {
     for (var i = 0; i < actualPower.length; i++) {
       if (actualPower[i] > rocket.rocketInitialPower[i]) {
@@ -141,15 +131,6 @@ function updateData(rocket) {
   changePropellerValues.innerHTML = rocket.rocketActualPower;
   changeSpeedValue.innerHTML = rocket.rocketSpeed;
 }
-
-/*
-function updateData2(rocket) {
-  var changePropellerValues = document.getElementById(rocket.serialNum).getElementsByClassName("ActualPropPow")[0];
-  var changeSpeedValue = document.getElementById(rocket.serialNum).getElementsByClassName("ActualSpeed")[0];
-  changePropellerValues.innerHTML = rocket.rocketActualPower;
-  changeSpeedValue.innerHTML = rocket.rocketSpeed;
-}
-*/
 
 showData(rocket1);
 showData(rocket2);

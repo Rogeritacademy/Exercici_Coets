@@ -12,6 +12,10 @@ class Rocket {
 }
 
 
+
+
+
+
 /*
 class Rocket_prova {
   constructor(serialNum, propellersNum, rocketMaxPower, rocketActualPower, rocketSpeed, powerUps) {
