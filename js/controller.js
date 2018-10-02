@@ -87,7 +87,6 @@ function updateData(rocket) {
   //var changeSpeedValues = document.getElementsByClassName("ActualSpeed")[0];
   changePropellerValues.innerHTML = rocket.rocketActualPower;
   //changeSpeedValues.innerHTML = rocket.rocketSpeed;
-
 }
 
 showData(rocket1);
