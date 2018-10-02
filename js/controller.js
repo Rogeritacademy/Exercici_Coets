@@ -41,16 +41,11 @@ var rocket2PropellersNum = rocket2MaxPower.length;
 var rocket1 = new Rocket(...rocket1Id, rocket1PropellersNum, rocket1MaxPower, rocket1ActualPower, rocket1Speed);
 var rocket2 = new Rocket(...rocket2Id, rocket2PropellersNum, rocket2MaxPower, rocket2ActualPower, rocket2Speed);
 
-
 document.getElementById("accel").addEventListener("click", function(){
     initAccel(3,rocket1);
     initAccel(3,rocket2);
-
     updateData(rocket1);
     updateData(rocket2);
-
-    //showData(rocket1);
-    //showData(rocket2);
 });
 
 function initAccel(powerUps,rocket) {
@@ -75,6 +70,8 @@ var desiredSpeed = powerUps*10;
   }
 }
 
+
+
 function showData(rocket) {
   var newDiv = document.createElement("div");
   newDiv.id = rocket.rocketName;
@@ -91,13 +88,3 @@ function updateData(rocket) {
 
 showData(rocket1);
 showData(rocket2);
-
-/*
-function actualSSpeed(arr1) {
-  var speed = 0;
-  for (var i = 0; i < arr1.length; i++) {
-    speed += arr1[i];
-  }
-  console.log("speed: ", speed);
-}
-*/
