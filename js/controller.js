@@ -29,8 +29,8 @@ var rocket2InitialPower = [0,0,0,0,0,0];
 var rocket1ActualPower = rocket1InitialPower;
 var rocket2ActualPower = rocket2InitialPower;
 
-var rocket1Speed = 20;
-var rocket2Speed = 0;
+var rocket1Speed = [0];
+var rocket2Speed = [0];
 
 const rocket1MaxPower = [10,30,80];
 const rocket2MaxPower = [30,40,50,50,30,10];
@@ -40,6 +40,8 @@ var rocket2PropellersNum = rocket2MaxPower.length;
 
 var rocket1 = new Rocket(...rocket1Id, rocket1PropellersNum, rocket1MaxPower, rocket1ActualPower, rocket1Speed);
 var rocket2 = new Rocket(...rocket2Id, rocket2PropellersNum, rocket2MaxPower, rocket2ActualPower, rocket2Speed);
+
+//var actualSpeed;
 
 document.getElementById("accel").addEventListener("click", function(){
     initAccel(rocket1,3);
@@ -53,26 +55,29 @@ function initAccel(rocket,powerUps) {
   var maxPower = rocket.rocketMaxPower;
   var actualSpeed = rocket.rocketSpeed;
 
-  console.log("accel: ", powerUps);
-
   accelerate(rocket,powerUps,actualPower,maxPower,actualSpeed);
 }
 
 function accelerate(rocket,powerUps,actualPower,maxPower,actualSpeed) {
 var desiredSpeed = powerUps*10;
+console.log("desiredSpeed: ", desiredSpeed);
+
   for(var j = 0; j <= powerUps; j++) {
     for (var i = 0; i < actualPower.length; i++) {
       if (actualPower[i] < maxPower[i]) {
         if (actualSpeed < desiredSpeed) {
           actualPower[i] = actualPower[i]+10;
-          console.log("propellers: ", actualPower);
-
-          actualSpeed = actualPower.reduce(function (accumulator, currentValue) {
+          actualSpeed[0] = actualPower.reduce(function (accumulator, currentValue) {
             return accumulator + currentValue;
           }, 0);
+          //actualSpeed[0] = actualSpeed[0]+10;
 
-          //actualSpeed = actualSpeed+10;
-          console.log("speed: ", rocket.rocketSpeed);
+          console.log("actualPower: ", actualPower);
+          console.log("rocketPower: ", rocket.rocketActualPower);
+
+          console.log("actualSpeed: ", actualSpeed);
+          console.log("rocketSpeed: ", rocket.rocketSpeed);
+
         }
       }
     }
@@ -92,7 +97,7 @@ function updateData(rocket) {
   var changePropellerValues = document.getElementById(rocket.serialNum).getElementsByClassName("ActualPropPow")[0];
   var changeSpeedValue = document.getElementById(rocket.serialNum).getElementsByClassName("ActualSpeed")[0];
   changePropellerValues.innerHTML = rocket.rocketActualPower;
-  //changeSpeedValue.innerHTML = rocket.rocketSpeed;
+  changeSpeedValue.innerHTML = rocket.rocketSpeed;
 }
 
 showData(rocket1);
