@@ -117,7 +117,6 @@ var desiredSpeed = actualSpeed - (powerDowns*10);
 }
 
 
-
 function showData(rocket) {
   var newDiv = document.createElement("div");
   newDiv.id = rocket.serialNum;
